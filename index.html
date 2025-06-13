@@ -446,10 +446,12 @@
       document.querySelector('.contact').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Update the hero button click handler
-    document.querySelector('.hero-btn').onclick = function() {
-      document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
-    };
+    function scrollToMenu() {
+      const menuSection = document.getElementById('menu-section');
+      if (menuSection) {
+        menuSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   </script>
 </head>
 <body>
@@ -488,10 +490,10 @@
         <p class="en">
           Discover an unforgettable culinary journey, where exquisite flavors meet a vibrant ambiance. Our chefs craft innovative dishes using the freshest, locally sourced ingredients, promising a delightful experience with every bite.
         </p>
-        <button class="hero-btn" onclick="document.querySelector('.menu').scrollIntoView({ behavior: 'smooth' });">
+        <button class="hero-btn" onclick="scrollToMenu()">
           <span class="fr">Voir le Menu</span>
           <span class="en">View Menu</span>
-              </button>
+        </button>
             </div>
             <div class="hero-image-container">
               <img class="hero-image" src="./hero_image.png" alt="Hero Image" />
@@ -499,7 +501,7 @@
     </section>
 
     <!-- Menu Section -->
-    <section id="menu" class="menu-section">
+    <section id="menu-section" class="menu-section">
       <h2 class="fr">Notre Menu</h2>
       <h2 class="en">Our Menu</h2>
       
